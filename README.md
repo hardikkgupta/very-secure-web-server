@@ -7,6 +7,6 @@ I rewatched _The Social Network_ recently, and guess what? I wanted to tackle th
 
 Use it for fun.
 
-_Disclaimer: Please don't use for wrong purposes.  Not to mention, Don't go to wild, wild internet for this._
+_Disclaimer: Please don't use this for wrong purposes.  Not to mention, Don't go to wild, wild internet for this._
 
 **Let the hacking begin!**
