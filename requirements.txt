@@ -1,0 +1,9 @@
+Flask
+Flask-WTF
+Flask-Limiter
+Flask-SSLify
+Flask-Talisman
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Bcrypt
+python-dotenv
