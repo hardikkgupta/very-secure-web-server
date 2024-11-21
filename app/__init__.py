@@ -1,10 +1,9 @@
 import os
 from flask import Flask
-from sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from flask_sslify import SSLify
 from flask_talisman import Talisman
 from flask_migrate import Migrate
 from flask_bcrypt import Bcrypt
@@ -15,7 +14,6 @@ from datetime import timedelta
 db = SQLAlchemy()
 csrf = CSRFProtect()
 limiter = Limiter(key_func=get_remote_address)
-sslify = SSLify()
 talisman = Talisman()
 migrate = Migrate()
 bcrypt = Bcrypt()
@@ -33,7 +31,11 @@ def create_app():
     db.init_app(app)
     csrf.init_app(app)
     limiter.init_app(app)
-    sslify.init_app(app)
+    
+    # Initialize SSLify within the application context
+    from flask_sslify import SSLify
+    sslify = SSLify(app)
+
     talisman.init_app(app, content_security_policy={
         'default-src': '\'self\'',
         'img-src': '*',
