@@ -1,10 +1,8 @@
-import os
 import re
-from flask import Blueprint, render_template, redirect, url_for, request, session, abort, send_from_directory, jsonify
+from flask import Blueprint, render_template, redirect, url_for, session, abort, send_from_directory
 from .forms import RegistrationForm, LoginForm
 from .models import User
 from . import db, bcrypt, limiter
-from werkzeug.security import generate_password_hash, check_password_hash
 import logging
 
 main = Blueprint('main', __name__)
